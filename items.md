@@ -90,6 +90,7 @@ Exposed links:
 * templateItemOf: the collection that have the item as template
 * relationships: the relationships to other items
 * thumbnail: the main thumbnail of the item
+* citations: list of formatted citations for this item
 
 Status codes:
 * 200 OK - if the item is found and it is visible to the current user or the anonymous user. Withdrawn items are returned
@@ -533,6 +534,11 @@ Return codes:
 * 403 Forbidden - if you are not logged in with sufficient permissions and versioning is not public
 * 204 No Content - if the specified item is not yet versioned
 * 400 Bad Request - if the item id param is missing or invalid (not an uuid)
+
+### Get list of formatted citations for item
+**GET /api/core/items/{:item-uui}/citations**
+
+Return a list of formatted bibliographic citations for the given Item UUID, generated with Citation Styling Language.
 
 ## Deleting an item
 
